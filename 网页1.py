@@ -299,3 +299,4 @@ try:
 except Exception as e:
     # 加载失败时显示备用图片
     st.image("https://picsum.photos/id/0/800/300", caption="备用图片", use_column_width=True)
+

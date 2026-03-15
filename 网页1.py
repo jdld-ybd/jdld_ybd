@@ -70,4 +70,4 @@ elif selected_page == "关于我":
     st.write("再次感谢支持🌹🌹🌹")
 
 # 4. 添加图片（仅在当前选中的页面显示，不会叠加）
-st.image("https://picsum.photos/800/300", caption="随机展示图片", use_container_width=True)
+st.image("https://picsum.photos/800/300", caption="随机展示图片", use_column_width=True)

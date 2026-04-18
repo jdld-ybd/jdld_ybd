@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技能 - 绝对零度的个人网站</title>
+    <link rel="icon" href="JDLD.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-category {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h3 {
+            color: #764ba2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-name {
+            font-weight: bold;
+        }
+        
+        .skill-level {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background-color: #667eea;
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .certifications {
+            margin-top: 2rem;
+        }
+        
+        .cert-item {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .cert-item h4 {
+            color: #764ba2;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            main {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>我的技能</h1>
+        <p>展示我的专业技能</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我</a></li>
+            <li><a href="projects.html">项目</a></li>
+            <li><a href="skills.html">技能</a></li>
+            <li><a href="contact.html">联系我</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section>
+            <h2>技能</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>python编程基础</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">python基础语法</span>
+                            <span class="skill-level">熟悉</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">pygame</span>
+                            <span class="skill-level">提升阶段</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">python爬虫</span>
+                            <span class="skill-level">掌握</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">GUI开发</span>
+                            <span class="skill-level">提升阶段</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>其他技能</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Git</span>
+                            <span class="skill-level">开始接触</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 10%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">AI编程</span>
+                            <span class="skill-level">开始接触</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 20%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">GitHub项目开发</span>
+                            <span class="skill-level">提升阶段</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 40%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">思考能力</span>
+                            <span class="skill-level">中等偏上</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="certifications">
+            <h2>证书</h2>
+            <div class="cert-item">
+                <h4>暂无</h4>
+                <p>颁发机构：</p>
+                <p>颁发日期：</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 绝对零度的个人网站. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.backgroundColor = 'rgba(51, 51, 51, 0.9)';
+            } else {
+                nav.style.backgroundColor = '#333';
+            }
+        });
+        
+        // 技能条动画
+        window.addEventListener('load', function() {
+            const skillProgresses = document.querySelectorAll('.skill-progress');
+            skillProgresses.forEach(progress => {
+                const width = progress.style.width;
+                progress.style.width = '0';
+                setTimeout(() => {
+                    progress.style.width = width;
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>

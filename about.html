@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - 绝对零度的个人网站</title>
+    <link rel="icon" href="JDLD.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .about-item {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .about-item h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #667eea;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #667eea;
+        }
+        
+        .timeline-date {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            main {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>关于我</h1>
+        <p>了解我的背景和经历</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我</a></li>
+            <li><a href="projects.html">项目</a></li>
+            <li><a href="skills.html">技能</a></li>
+            <li><a href="contact.html">联系我</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section>
+            <h2>个人简介</h2>
+            <div class="about-content">
+                <div class="about-item">
+                    <h3>基本信息</h3>
+                    <p>我是一名热爱python编程的初中生，不断学习新技术来提升自己的技能。</p>   
+                    <a href="https://www.douyin.com/user/MS4wLjABAAAAFOcZBuOb8Oto99ArPGVFYRJvoqmG3gh5N7tyfc8STKk">抖音号@绝对零度</a>    
+                    <a href="https://github.com/jdld-ybd/">GitHub@jdld-ybd</a>             
+                </div>
+                
+                
+                <div class="about-item">
+                    <h3>学习经历</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2024 - 至今</div>
+                            <h4>自学python</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-item">
+                    <h3>个人特点</h3>
+                    <ul style="list-style: disc; margin-left: 2rem;">
+                        <li>热爱学习，不断追求技术进步</li>
+                        <li>解决问题的能力强</li>
+                    </ul>
+                </div>
+                <div class="about-item">
+                    <h3>致谢🌹</h3>
+                    <ul style="list-style: disc; margin-left: 2rem;">
+                        <li>感谢netlify为我提供免费的网站部署平台</li>
+                        <li>感谢Trae CN的SOLO功能</li>
+                        <li>感谢Visual Studio Code为我提供强大的开发环境</li>
+                        <li>感谢Github为我提供分享代码的平台</li>
+                        <li>感谢formsubmit为我提供简单的表单提交功能</li>
+                        <li>感谢Canva为我提供专业的设计工具</li>
+                        <li>感谢抖音为我提供分享技术的平台</li>
+                        <li>感谢Python这门强大的编程语言为我提供丰富的库和工具</li>
+                        <li>在此，感谢各位对我的支持</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 绝对零度的个人网站. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.backgroundColor = 'rgba(51, 51, 51, 0.9)';
+            } else {
+                nav.style.backgroundColor = '#333';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -160,6 +160,25 @@
             line-height: 1.2;
         }
         
+        .typewriter {
+            overflow: hidden;
+            border-right: 0.15em solid #3b82f6;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 0.15em;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3b82f6; }
+        }
+        
         .hero p {
             font-size: 1.25rem;
             color: var(--text-secondary);
@@ -311,6 +330,11 @@
                 font-size: 2.2rem;
             }
             
+            .typewriter {
+                letter-spacing: 0.1em;
+                animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+            }
+            
             .projects-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -341,7 +365,7 @@
     
     <main>
         <section class="hero">
-            <h1>你好，我是一名爱好编程的初中生</h1>
+            <h1 class="typewriter" id="typewriter">你好，我是一名爱好编程的初中生</h1>
             <p>不断学习新技术来提升自己的技能</p>
             <a href="contact.html" class="cta-button">联系我</a>
         </section>

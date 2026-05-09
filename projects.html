@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>项目 - 绝对零度个人网站</title>
-    <link rel="icon" href="JDLD - 5.1.png" type="image/png">
+    <link rel="icon" href="JDLD.png" type="image/png">
     <style>
         * {
             margin: 0;
@@ -286,6 +286,30 @@
                 font-size: 1.8rem;
             }
         }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: none;
+            z-index: 99;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
     </style>
 </head>
 <body>
@@ -352,6 +376,9 @@
         <p>&copy; 2026 绝对零度的个人网站. All rights reserved.</p>
     </footer>
     
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="back-to-top">↑</button>
+    
     <script>
         // 导航栏滚动效果
         window.addEventListener('scroll', function() {
@@ -363,6 +390,24 @@
                 nav.style.backgroundColor = 'white';
                 nav.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
             }
+        });
+        
+        // 回到顶部按钮功能
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>

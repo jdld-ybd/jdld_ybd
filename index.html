@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>绝对零度个人网站</title>
-    <link rel="icon" href="JDLD - 5.1.png" type="image/png">
+    <link rel="icon" href="JDLD.png" type="image/png">
     <style>
         * {
             margin: 0;
@@ -161,22 +161,43 @@
         }
         
         .typewriter {
-            overflow: hidden;
             border-right: 0.15em solid #3b82f6;
-            white-space: nowrap;
             margin: 0 auto;
             letter-spacing: 0.15em;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            display: inline-block;
         }
         
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+        .typing {
+            animation: blink-caret 0.75s step-end infinite;
         }
         
         @keyframes blink-caret {
             from, to { border-color: transparent }
             50% { border-color: #3b82f6; }
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: none;
+            z-index: 99;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
         
         .hero p {
@@ -365,7 +386,7 @@
     
     <main>
         <section class="hero">
-            <h1 class="typewriter" id="typewriter">你好，我是一名爱好编程的初中生</h1>
+            <h1 class="typewriter" id="typewriter"></h1>
             <p>不断学习新技术来提升自己的技能</p>
             <a href="contact.html" class="cta-button">联系我</a>
         </section>
@@ -402,6 +423,9 @@
         <p>&copy; 2026 绝对零度的个人网站. All rights reserved.</p>
     </footer>
     
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="back-to-top">↑</button>
+    
     <script>
         // 导航栏滚动效果
         window.addEventListener('scroll', function() {
@@ -413,6 +437,49 @@
                 nav.style.backgroundColor = 'white';
                 nav.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
             }
+        });
+        
+        // 打字机效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const typewriter = document.getElementById('typewriter');
+            const text = '你好，我是一名爱好编程的初中生';
+            let index = 0;
+            const speed = 150; // 打字速度（毫秒/字符）
+            
+            function type() {
+                if (index < text.length) {
+                    typewriter.textContent += text.charAt(index);
+                    typewriter.classList.add('typing');
+                    index++;
+                    setTimeout(type, speed);
+                } else {
+                    // 打字完成后移除光标闪烁效果
+                    setTimeout(() => {
+                        typewriter.classList.remove('typing');
+                        typewriter.style.borderRight = 'none';
+                    }, 1000);
+                }
+            }
+            
+            type();
+        });
+        
+        // 回到顶部按钮功能
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>
